@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Agendamento | Gelma Sousa</title>
+
+<style>
+
+/* ================================
+   CONFIGURAÇÕES GERAIS
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.55),
+            rgba(0,0,0,.88)
+        ),
+        url("https://i.im.ge/QQ22pgx/WhatsApp_Image_2026-09-24_at_21.40.20.jpg");
+
+    background-size: cover;
+
+    background-position: center top;
+
+    background-repeat: no-repeat;
+
+    background-attachment: fixed;
+}
+
+
+/* ================================
+   CABEÇALHO
+================================ */
+
+header {
+
+    text-align: center;
+
+    padding: 55px 20px 35px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.30),
+            rgba(0,0,0,.80)
+        );
+}
+
+
+.logo {
+
+    font-family: Georgia, serif;
+
+    font-size: 55px;
+
+    font-style: italic;
+
+    font-weight: bold;
+
+    line-height: 1;
+}
+
+
+.gelma {
+
+    color: #ffd15c;
+
+    text-shadow:
+        0 0 10px #ffba00,
+        0 0 20px rgba(255,190,0,.4);
+}
+
+
+.sousa {
+
+    color: #ff008c;
+
+    text-shadow:
+        0 0 10px #ff008c,
+        0 0 25px rgba(255,0,140,.5);
+}
+
+
+header h2 {
+
+    margin-top: 20px;
+
+    font-size: 20px;
+
+    letter-spacing: 2px;
+}
+
+
+header p {
+
+    margin-top: 10px;
+
+    color: #eee;
+
+    font-size: 16px;
+}
+
+
+/* ================================
+   BOTÃO PRINCIPAL
+================================ */
+
+.btn-agendar {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 18px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c80069,
+            #ff008c,
+            #ff43ad
+        );
+
+    box-shadow:
+        0 0 15px rgba(255,0,140,.7);
+
+    transition: .3s;
+}
+
+
+.btn-agendar:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 30px rgba(255,0,140,1);
+}
+
+
+/* ================================
+   CONTAINER
+================================ */
+
+.container {
+
+    width: 92%;
+
+    max-width: 720px;
+
+    margin: auto;
+
+    padding-bottom: 60px;
+}
+
+
+/* ================================
+   SERVIÇOS
+================================ */
+
+.servicos {
+
+    background:
+        rgba(5,5,5,.88);
+
+    backdrop-filter: blur(10px);
+
+    border:
+
+        1px solid rgba(255,0,140,.50);
+
+    border-radius: 25px;
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+
+        0 0 30px rgba(255,0,140,.18);
+}
+
+
+.titulo {
+
+    text-align: center;
+
+    font-size: 27px;
+
+    color: #ff2ba0;
+
+    margin-bottom: 20px;
+}
+
+
+.lista-servicos {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+}
+
+
+.servico {
+
+    background:
+        rgba(255,255,255,.06);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    padding: 15px 8px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    transition: .25s;
+}
+
+
+.servico:hover {
+
+    border-color: #ff008c;
+
+    background:
+        rgba(255,0,140,.12);
+}
+
+
+.icone {
+
+    display: block;
+
+    font-size: 27px;
+
+    margin-bottom: 6px;
+}
+
+
+/* ================================
+   FORMULÁRIO
+================================ */
+
+.formulario {
+
+    background:
+        rgba(7,7,7,.92);
+
+    backdrop-filter:
+        blur(12px);
+
+    border:
+        1px solid rgba(255,0,140,.55);
+
+    border-radius:
+        25px;
+
+    padding:
+        28px;
+
+    box-shadow:
+        0 0 35px rgba(255,0,140,.20);
+}
+
+
+.formulario h2 {
+
+    text-align: center;
+
+    color: #ffd15c;
+
+    font-size: 28px;
+
+    margin-bottom: 7px;
+}
+
+
+.subtitulo {
+
+    text-align: center;
+
+    color: #ccc;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+
+
+.campo {
+
+    margin-bottom: 18px;
+}
+
+
+.campo label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #fff;
+}
+
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    border:
+        1px solid #42363f;
+
+    background:
+        rgba(15,15,15,.95);
+
+    color: white;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus {
+
+    border-color:
+        #ff008c;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255,0,140,.15);
+}
+
+
+textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+}
+
+
+/* ================================
+   BOTÃO WHATSAPP
+================================ */
+
+.botao-whatsapp {
+
+    width: 100%;
+
+    border: none;
+
+    padding: 17px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            90deg,
+            #d60074,
+            #ff008c,
+            #ff3faa
+        );
+
+    box-shadow:
+        0 0 22px rgba(255,0,140,.45);
+
+    transition: .3s;
+}
+
+
+.botao-whatsapp:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 0 35px rgba(255,0,140,.8);
+}
+
+
+.aviso {
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: #bbb;
+}
+
+
+/* ================================
+   INFORMAÇÕES
+================================ */
+
+.informacoes {
+
+    margin-top: 25px;
+
+    background:
+        rgba(5,5,5,.90);
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    text-align: center;
+
+    border:
+        1px solid rgba(255,196,81,.30);
+}
+
+
+.informacoes h3 {
+
+    color: #ffd15c;
+
+    margin-bottom: 15px;
+}
+
+
+.info {
+
+    margin:
+        12px 0;
+
+    line-height: 1.5;
+}
+
+
+.telefone {
+
+    color: #ff2ba0;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   RODAPÉ
+================================ */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    color: #aaa;
+
+    background:
+        rgba(0,0,0,.88);
+
+    border-top:
+        1px solid rgba(255,0,140,.20);
+}
+
+
+/* ================================
+   CELULAR
+================================ */
+
+@media(max-width: 600px) {
+
+    body {
+
+        background-attachment:
+            scroll;
+    }
+
+    header {
+
+        padding:
+            40px 15px 30px;
+    }
+
+    .logo {
+
+        font-size:
+            48px;
+    }
+
+    .lista-servicos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .formulario {
+
+        padding:
+            21px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ===========================
+     TOPO
+=========================== -->
+
+<header>
+
+    <div class="logo">
+
+        <span class="gelma">
+            Gelma
+        </span>
+
+        <br>
+
+        <span class="sousa">
+            Sousa
+        </span>
+
+    </div>
+
+
+    <h2>
+        ✨ REALCE SUA BELEZA ✨
+    </h2>
+
+
+    <p>
+        Estúdio de Cabeleireira
+        • Atendimento com hora marcada
+    </p>
+
+
+    <a
+        href="#agendamento"
+        class="btn-agendar">
+
+        💖 AGENDAR MEU HORÁRIO
+
+    </a>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- ===========================
+     SERVIÇOS
+=========================== -->
+
+<section class="servicos">
+
+
+<h2 class="titulo">
+
+    ✨ Nossos Serviços
+
+</h2>
+
+
+<div class="lista-servicos">
+
+
+<div class="servico">
+
+<span class="icone">
+✂️
+</span>
+
+Alisamentos
+
+</div>
+
+
+
+<div class="servico">
+
+<span class="icone">
+💇‍♀️
+</span>
+
+Progressivas
+
+</div>
+
+
+
+<div class="servico">
+
+<span class="icone">
+✨
+</span>
+
+Botox Capilar
+
+</div>
+
+
+
+<div class="servico">
+
+<span class="icone">
+🎨
+</span>
+
+Colorações
+
+</div>
+
+
+
+<div class="servico">
+
+<span class="icone">
+👁️
+</span>
+
+Sobrancelhas
+
+</div>
+
+
+
+<div class="servico">
+
+<span class="icone">
+💅
+</span>
+
+Unhas
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ===========================
+     AGENDAMENTO
+=========================== -->
+
+<section
+class="formulario"
+id="agendamento">
+
+
+<h2>
+
+💖 Agende seu horário
+
+</h2>
+
+
+<p class="subtitulo">
+
+Escolha o serviço, a data e
+o horário desejado.
+
+<br>
+
+Depois é só enviar seu
+pedido pelo WhatsApp.
+
+</p>
+
+
+
+<form id="formAgendamento">
+
+
+<div class="campo">
+
+<label>
+
+👤 Seu nome *
+
+</label>
+
+<input
+type="text"
+id="nome"
+placeholder="Digite seu nome"
+required>
+
+</div>
+
+
+
+<div class="campo">
+
+<label>
+
+📱 Seu WhatsApp *
+
+</label>
+
+<input
+type="tel"
+id="telefone"
+placeholder="(13) 99999-9999"
+required>
+
+</div>
+
+
+
+<div class="campo">
+
+<label>
+
+✨ Qual serviço deseja? *
+
+</label>
+
+
+<select
+id="servico"
+required>
+
+
+<option value="">
+
+Selecione o serviço...
+
+</option>
+
+
+<option>
+
+Alisamento
+
+</option>
+
+
+<option>
+
+Progressiva
+
+</option>
+
+
+<option>
+
+Botox Capilar
+
+</option>
+
+
+<option>
+
+Coloração
+
+</option>
+
+
+<option>
+
+Sobrancelhas
+
+</option>
+
+
+<option>
+
+Unhas
+
+</option>
+
+
+<option>
+
+Outro serviço
+
+</option>
+
+
+</select>
+
+</div>
+
+
+
+<div class="campo">
+
+<label>
+
+📅 Qual dia você deseja? *
+
+</label>
+
+
+<input
+type="date"
+id="data"
+required>
+
+</div>
+
+
+
+<div class="campo">
+
+<label>
+
+⏰ Qual horário deseja? *
+
+</label>
+
+
+<input
+type="time"
+id="hora"
+required>
+
+</div>
+
+
+
+<div class="campo">
+
+<label>
+
+🗓️ Melhor período
+
+</label>
+
+
+<select id="periodo">
+
+<option>
+
+Qualquer horário disponível
+
+</option>
+
+<option>
+
+Manhã
+
+</option>
+
+<option>
+
+Tarde
+
+</option>
+
+<option>
+
+Noite
+
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="campo">
+
+<label>
+
+📝 Observações
+
+</label>
+
+
+<textarea
+id="observacao"
+placeholder="Ex.: tamanho do cabelo, procedimento que deseja fazer ou alguma informação importante."></textarea>
+
+</div>
+
+
+
+<button
+type="submit"
+class="botao-whatsapp">
+
+📲 SOLICITAR AGENDAMENTO
+
+</button>
+
+
+
+<p class="aviso">
+
+⚠️ O envio da solicitação
+não confirma automaticamente
+a vaga.
+
+<br>
+
+Gelma confirmará a
+disponibilidade do horário
+pelo WhatsApp.
+
+</p>
+
+
+</form>
+
+</section>
+
+
+
+<!-- ===========================
+     CONTATO
+=========================== -->
+
+<section class="informacoes">
+
+
+<h3>
+
+💖 Gelma Sousa
+
+</h3>
+
+
+<div class="info">
+
+📲 WhatsApp
+
+<br>
+
+<span class="telefone">
+
+(13) 99609-8373
+
+</span>
+
+</div>
+
+
+<div class="info">
+
+📍
+<strong>
+Endereço
+</strong>
+
+<br><br>
+
+Rua Gilberto Lopes,
+nº 27 - Casa 3
+
+<br>
+
+Praia Grande - SP
+
+</div>
+
+
+<div class="info">
+
+🕐
+
+<strong>
+
+Atendimento com
+hora marcada
+
+</strong>
+
+</div>
+
+
+</section>
+
+
+</div>
+
+
+
+<footer>
+
+✨ Gelma Sousa ✨
+
+<br><br>
+
+Estúdio de Cabeleireira
+
+<br>
+
+Realce sua beleza com
+quem entende! 💖
+
+</footer>
+
+
+
+<script>
+
+/* DATA MÍNIMA = HOJE */
+
+const campoData =
+document.getElementById("data");
+
+
+const hoje =
+new Date();
+
+
+const dataLocal =
+new Date(
+hoje.getTime()
+-
+hoje.getTimezoneOffset()
+*
+60000
+)
+.toISOString()
+.split("T")[0];
+
+
+campoData.min =
+dataLocal;
+
+
+
+/* ===========================
+   ENVIAR PARA WHATSAPP
+=========================== */
+
+document
+.getElementById("formAgendamento")
+.addEventListener(
+"submit",
+function(event) {
+
+
+event.preventDefault();
+
+
+
+const nome =
+document
+.getElementById("nome")
+.value
+.trim();
+
+
+
+const telefone =
+document
+.getElementById("telefone")
+.value
+.trim();
+
+
+
+const servico =
+document
+.getElementById("servico")
+.value;
+
+
+
+const data =
+document
+.getElementById("data")
+.value;
+
+
+
+const hora =
+document
+.getElementById("hora")
+.value;
+
+
+
+const periodo =
+document
+.getElementById("periodo")
+.value;
+
+
+
+const observacao =
+document
+.getElementById("observacao")
+.value
+.trim();
+
+
+
+/* FORMATAR DATA */
+
+const partes =
+data.split("-");
+
+
+let dataFormatada =
+data;
+
+
+if(partes.length === 3) {
+
+dataFormatada =
+partes[2]
++
+"/"
++
+partes[1]
++
+"/"
++
+partes[0];
+
+}
+
+
+
+/* MENSAGEM */
+
+const mensagem =
+
+`Olá, Gelma! 💖
+
+Gostaria de solicitar um agendamento.
+
+👤 *NOME:*
+${nome}
+
+📱 *MEU WHATSAPP:*
+${telefone}
+
+✨ *SERVIÇO:*
+${servico}
+
+📅 *DATA DESEJADA:*
+${dataFormatada}
+
+⏰ *HORÁRIO DESEJADO:*
+${hora}
+
+🗓️ *PERÍODO:*
+${periodo}
+
+📝 *OBSERVAÇÕES:*
+${observacao || "Nenhuma"}
+
+Pode me confirmar se esse horário está disponível? 💖`;
+
+
+
+/* WHATSAPP GELMA */
+
+const numeroWhatsApp =
+"5513996098373";
+
+
+const url =
+
+"https://wa.me/"
++
+numeroWhatsApp
++
+"?text="
++
+encodeURIComponent(
+mensagem
+);
+
+
+
+window.open(
+url,
+"_blank"
+);
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>
